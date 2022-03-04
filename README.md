@@ -1,2 +1,2 @@
-# JavaScript-_Course_2022
+# JavaScript_Course_2022
 JavaScript _Course_2022
