@@ -130,6 +130,7 @@ console.log(
     percentageOfWorldTwoExpreesions,
     percentageOfWorldThreeExpreesions
 );
+
 // ! LECTURE: Arrow Functions
 // const variableName = (parameters)=> retuend value
 // when write arrow function we do not have to explicitly write 'return' keyword
@@ -192,19 +193,84 @@ const describePopulation = (country, population) => {
 console.log(describePopulation("China", 1441));
 console.log(describePopulation("USA", 5555));
 console.log(describePopulation("Singapore", 8782));
-// ! LECTURE: Introduction to Arrays
 
+// ! Lecture Function reviews
+// 3 Types of functions
+// 1. Function Declaration
+//functions that can be used before it's declared.
+// function FunctionName(parameters){function body}
+// 2. Function Expression
+//a function value stored in a variable
+//const varibaleName = function(parameters){function body}
+// 3. Arrow Function
+// Grate for a quick one-line functions. Has no this keyword.
+//const variableName = (parameters)=>{function body}
+// ! LECTURE: Introduction to Arrays
+const variableArreay = [1, 2, 3, 4, 5];
+// array are zero-based , the first element is 0, the second is 1, the third is 2, and so on.
+//array.length is used to get the number of the Elements
+// .length is called the property (talk later in Objects)
+console.log(
+    `
+The first element in this array is 
+${variableArreay[0]}
+`
+);
+// use .length to get the last element of the array .length- 1
+//- 1 b/c .length is NOT zero-based, so we always need to minus 1
+// inside [] , is an expression. array.length[]
+console.log(
+    `
+    The last element in this array is 
+    ${variableArreay[variableArreay.length - 1]}
+    `
+);
 // ? Assignment - LECTURE: Introduction to Arrays
 // 1. Create an array containing 4 population values of 4 countries of your choice.
 // You may use the values you have been using previously. Store this array into a
 // variable called 'populations'
+const arrayPopulations = [400000000, 500000000, 600000000, 700000000];
 // 2. Log to the console whether the array has 4 elements or not (true or false)
+console.log(arrayPopulations.length === 4);
 // 3. Create an array called 'percentages' containing the percentages of the
 // world population for these 4 population values. Use the function
 // 'percentageOfWorld1' that you created earlier to compute the 4
 // percentage values
+// const percentages = [
+//     percentageOfWorld1(arrayPopulations[0]),
+//     percentageOfWorld1(arrayPopulations[1]),
+//     percentageOfWorld1(arrayPopulations[2]),
+//     percentageOfWorld1(arrayPopulations[3]),
+// ];
+// console.log(percentages)
 
+const percentages = arrayPopulations.map((population) => {
+   return percentageOfWorld1(population);  
+});
+console.log(percentages)
 // ! LECTURE: Basic Array Operations (Methods)
+// Technically is a function , but it is called a method in array.
+// ADD Elements : 
+// Push Method : add an element to the end of the array
+// Since push is a function here , and we know function have a return value, 
+// so in this case this function returned a length of a new array. 
+// Example: 
+const arrayOriginal = [1, 2, 3, 4, 5];
+const arrayNew = arrayOriginal.push(6);
+console.log(arrayOriginal);
+// Unshift Method : add an element to the beginning of the array
+
+// REMOVE Elements : 
+// Pop methods : remove an element from the end of the array
+// Shift methods : remove an element from the beginning of the array
+
+// indexOf Method : find the index of an element in the array (returns -1 if not found)
+// includes Method : check if an element exists in the array(returns true or false)
+if(arrayOriginal.includes(6)){
+    console.log("Yes, this array has 6");
+}else{
+    console.log(`No, This array  does not have 6`);
+}
 
 // ? Assignment - LECTURE: Basic Array Operations (Methods)
 // 1. Create an array containing all the neighbouring countries of a country of your
