@@ -245,30 +245,30 @@ console.log(arrayPopulations.length === 4);
 // console.log(percentages)
 
 const percentages = arrayPopulations.map((population) => {
-   return percentageOfWorld1(population);  
+    return percentageOfWorld1(population);
 });
-console.log(percentages)
+console.log(percentages);
 // ! LECTURE: Basic Array Operations (Methods)
 // Technically is a function , but it is called a method in array.
-// ADD Elements : 
+// ADD Elements :
 // Push Method : add an element to the end of the array
-// Since push is a function here , and we know function have a return value, 
-// so in this case this function returned a length of a new array. 
-// Example: 
+// Since push is a function here , and we know function have a return value,
+// so in this case this function returned a length of a new array.
+// Example:
 const arrayOriginal = [1, 2, 3, 4, 5];
 const arrayNew = arrayOriginal.push(6);
 console.log(arrayOriginal);
 // Unshift Method : add an element to the beginning of the array
 
-// REMOVE Elements : 
+// REMOVE Elements :
 // Pop methods : remove an element from the end of the array
 // Shift methods : remove an element from the beginning of the array
 
 // indexOf Method : find the index of an element in the array (returns -1 if not found)
 // includes Method : check if an element exists in the array(returns true or false)
-if(arrayOriginal.includes(6)){
+if (arrayOriginal.includes(6)) {
     console.log("Yes, this array has 6");
-}else{
+} else {
     console.log(`No, This array  does not have 6`);
 }
 
@@ -276,16 +276,29 @@ if(arrayOriginal.includes(6)){
 // 1. Create an array containing all the neighbouring countries of a country of your
 // choice. Choose a country which has at least 2 or 3 neighbours. Store the array
 // into a variable called 'neighbours'
+const neighbours = ["China", "USA", "Singapore", "Japan"];
+
 // 2. At some point, a new country called 'Utopia' is created in the neighbourhood of
 // your selected country. So add it to the end of the 'neighbours' array
+neighbours.push("Utopia");
 // 3. Unfortunately, after some time, the new country is dissolved. So remove it from
 // the end of the array
+neighbours.pop();
 // 4. If the 'neighbours' array does not include the country ‘Germany’, log to the
 // console: 'Probably not a central European country :D'
-// 5. Change the name of one of your neighbouring countries. To do that, find the
-// index of the country in the 'neighbours' array, and then use that index to
-// change the array at that index position. For example, you can search for
-// 'Sweden' in the array, and then replace it with 'Republic of Sweden'.
+if (neighbours.includes("Germany")) {
+    console.log("Germany is a central European country");
+} else {
+    console.log("Germany is not a central European country");
+}
+// 5. Change the name of one of your neighbouring countries. To do that,
+// find the index of the country in the 'neighbours' array,
+const aIndex = neighbours.indexOf("Singapore");
+// and then use that index to change the array at that index position.
+// For example, you can search for 'Sweden' in the array, and then replace it with 'Republic of Sweden'.
+neighbours[aIndex] = "Russia";
+console.log(neighbours);
+
 // ! LECTURE: Introduction to Objects
 
 // ? Assignment - LECTURE: Introduction to Objects
