@@ -312,6 +312,8 @@ const myCountry = {
     population: 8782,
     neighbours: ["China", "USA", "Japan"],
 };
+let countryOOP = myCountry.country;
+console.log(`${countryOOP} is the country from countryOOP`);
 // ! LECTURE: Dot vs. Bracket Notation
 
 // ? Assignment - LECTURE: Dot vs. Bracket Notation
