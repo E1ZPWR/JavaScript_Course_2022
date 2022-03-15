@@ -387,6 +387,7 @@ const Peter = {
     birthYear: 1992,
     jobTitle: "Developer",
     JobLevel: "Senior",
+    hasDriversLicense: true,
 
     calAge: function () {
         // Now, Think about if we need to calculate the age 5 time , and this means
@@ -397,12 +398,21 @@ const Peter = {
         this.age = 2022 - this.birthYear;
         return this.age;
     },
+
+    getSummary: function () {
+        return `
+        ${this.firstName} ${this.lastName} is ${this.calAge()} years old 
+        and he is a ${this.jobTitle}, 
+        and he has ${this.hasDriversLicense ? "a" : "no"} Drivers License
+        `;
+    },
 };
 // Object Peter is currently calling the calAge function/Method ,
 // So the keyword 'this' is referring to the object Peter.
 
-console.log(Peter.calAge());
-console.log(Peter.age);
+// Peter.calAge();
+const result = Peter.getSummary();
+console.log(result);
 
 // ? Assignment - LECTURE: Object Methods
 // 1. Add a method called 'describe' to the 'myCountry' object. This method
