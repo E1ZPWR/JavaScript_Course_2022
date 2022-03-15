@@ -305,6 +305,12 @@ console.log(neighbours);
 // 1. Create an object called 'myCountry' for a country of your choice, containing
 // properties 'country', 'capital', 'language', 'population' and
 // 'neighbours' (an array like we used in previous assignments)
+
+// The following example is called object literals syntax
+// The diiferent of the objects and arrays are:
+// The order of objects properties does not matter at all when we want to recrive them,
+// but the order of arrays does matter.
+// Use object for unstructured data and arrays for structured data
 const myCountry = {
     country: "Singapore",
     capital: "Singapore",
@@ -320,6 +326,12 @@ console.log(`${countryOOP} is the country from countryOOP`);
 // 1. Using the object from the previous assignment, log a string like this to the
 // console: 'Finland has 6 million finnish-speaking people, 3 neighbouring countries
 // and a capital called Helsinki.'
+const stringFromOOP = `
+${myCountry.country} has ${myCountry.population} million finnish-speaking people, 
+${myCountry.neighbours.length} neighbouring countries 
+and a capital called ${myCountry.capital}.
+`;
+console.log(stringFromOOP);
 // 2. Increase the country's population by two million using dot notation, and then
 // decrease it by two million using brackets notation.
 
