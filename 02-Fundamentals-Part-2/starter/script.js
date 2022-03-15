@@ -312,6 +312,7 @@ console.log(neighbours);
 // but the order of arrays does matter.
 // Use object for unstructured data and arrays for structured data
 const myCountry = {
+    //key:"value"
     country: "Singapore",
     capital: "Singapore",
     language: "English",
@@ -321,7 +322,48 @@ const myCountry = {
 const countryOOP = myCountry.country;
 console.log(`${countryOOP} is the country from countryOOP`);
 // ! LECTURE: Dot vs. Bracket Notation
+// Dot notation is a way to access the properties of an object.
+// Dot : We have to use the final property name
+// Bracket notation : We can put any expression inside the brackets,
+// we can compute it from some operations , b/c operations is an basiclly expression
+// Examples :
+const Jack = {
+    firstName: "Jack",
+    lastName: "Li",
+    age: 30,
+    jobTitle: "Developer",
+    JobLevel: "Senior",
+};
+//use Dot notation to access the property 'age'
+console.log(Jack.age);
+//use Bracket notation with expression to access the property 'firstname' and 'lastname'
+const name = "Name";
+console.log(Jack["first" + name]);
+console.log(Jack["last" + name]);
 
+//Example 2 :
+// use prompt ftn let user input some things
+//the prompt ftn will return a string
+// so we need to save the prompt ftn result in a variable
+const answers = prompt(`What do you want to know about Jack? 
+choose between firstname, lastname, age, jobtitle, joblevel`);
+// console.log(Jack.answers); => return undefined
+// undefined will happend when we tring to access a property on a object that does not exsit.
+// Why? => In this case, the Object 'Jack' does not have a property answers, so it will return undefined.
+// but if we change to bracket notation, it will return the value of the property.
+// because inside bracket notation, we can put a compute value.
+// therefore the result of this example :
+//console.log(Jack[expressions]);
+console.log(Jack[answers]);
+Jack.friends = ["John", "Jane", "Bob"];
+console.log(
+    `${Jack.firstName} ${Jack.lastName} has ${Jack.friends.length} friends and his best friends is ${Jack.friends[0]}`
+);
+// Re-cap:
+// When to use the dot notation:
+// any other situation , we can use the dot notation
+// When to use the bracket notation
+// when we first need to compute the property name
 // ? Assignment - LECTURE: Dot vs. Bracket Notation
 // 1. Using the object from the previous assignment, log a string like this to the
 // console: 'Finland has 6 million finnish-speaking people, 3 neighbouring countries
@@ -336,6 +378,31 @@ console.log(stringFromOOP);
 // decrease it by two million using brackets notation.
 
 // ! LECTURE: Object Methods
+// The Keyword This :
+// The keyword this refers to the object that is currently being used.
+
+const Peter = {
+    firstName: "Peter",
+    lastName: "Li",
+    birthYear: 1992,
+    jobTitle: "Developer",
+    JobLevel: "Senior",
+
+    calAge: function () {
+        // Now, Think about if we need to calculate the age 5 time , and this means
+        // that we need to call calAge() funtion 5 time,
+        // What if we createa new value for this object ,
+        // so we can save the result from calAge() ftn.
+        // let us to this keyword to create a new value for this object
+        this.age = 2022 - this.birthYear;
+        return this.age;
+    },
+};
+// Object Peter is currently calling the calAge function/Method ,
+// So the keyword 'this' is referring to the object Peter.
+
+console.log(Peter.calAge());
+console.log(Peter.age);
 
 // ? Assignment - LECTURE: Object Methods
 // 1. Add a method called 'describe' to the 'myCountry' object. This method
