@@ -412,7 +412,7 @@ const Peter = {
 
 // Peter.calAge();
 const result = Peter.getSummary();
-console.log(result);
+console.log(result);00
 
 // ? Assignment - LECTURE: Object Methods
 // 1. Add a method called 'describe' to the 'myCountry' object. This method
