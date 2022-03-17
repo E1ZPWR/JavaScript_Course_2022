@@ -412,7 +412,7 @@ const Peter = {
 
 // Peter.calAge();
 const result = Peter.getSummary();
-console.log(result);00
+console.log(result);
 
 // ? Assignment - LECTURE: Object Methods
 // 1. Add a method called 'describe' to the 'myCountry' object. This method
@@ -423,6 +423,26 @@ console.log(result);00
 // method will set a new property on the object, called 'isIsland'.
 // 'isIsland' will be true if there are no neighbouring countries, and false if
 // there are. Use the ternary operator to set the property.
+const myCountryV2 = {
+    //key:"value"
+    country: "Singapore",
+    capital: "Singapore",
+    language: "English",
+    population: 8782,
+    neighbours: ["China", "USA", "Japan"],
+    describe: function () {
+        return `${this.country} has ${this.population} million finnish-speaking people, 
+        ${this.neighbours.length} neighbouring countries 
+        and a capital called ${this.capital}.
+        `;
+    },
+    checkIsland: function () {
+        this.isIsland =
+            this.neighbours.length === 0
+                ? true + `It is island`
+                : false + `It is not island`;
+    },
+};
 
 // ! LECTURE: Iteration: The for Loop
 
