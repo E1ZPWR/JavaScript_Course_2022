@@ -461,6 +461,15 @@ const arrayInit = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 for (let i = 0; 1 <= arrayInit.length; i++) {
     console.log(arrayInit[i]);
 }
+
+const yearsOfTheAge = [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
+const birthYearInArray = [];
+
+for (let i = 0; i < yearsOfTheAge.length; i++) {
+    birthYearInArray.push(2022 - yearsOfTheAge[i]);
+}
+console.log(birthYearInArray);
+
 // ? Assignment - LECTURE: Looping Arrays, Breaking and Continuing
 // 1. Let's bring back the 'populations' array from a previous assignment
 // 2. Use a for loop to compute an array called 'percentages2' containing the
@@ -475,15 +484,6 @@ for (let i = 0; 1 <= arrayInit.length; i++) {
 //     return percentage;
 // }
 
-const arrayPopulationExample = [5600, 7200, 8200, 9200];
-const percentages2 = [];
-for (let i = 0; 1 < arrayPopulationExample.length; i++) {
-    // const result = percentageOfWorld1([i]);
-    // percentages2.push(result);
-    console.log(i);
-}
-// console.log(result);
-// console.log(percentages2);
 // ! LECTURE: Looping Backwards and Loops in Loops
 
 // ? Assignment - LECTURE: Looping Backwards and Loops in Loops
