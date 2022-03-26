@@ -28,81 +28,43 @@
 // ? Answer
 // declearation for all the bills in array
 const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const totalArr = [];
+const tipsArr = [];
 
-// function to calculate the average of an array
-function calcAverage(arr) {
-    // create a variable to store the sum
+//calcTip: calculate the tip for each bill
+const calcTips = function (bills) {
+    return bills >= 50 && bills <= 300 ? bills * 0.15 : bills * 0.2;
+};
+// Use forEach method to calculate the tip and total for each bill by callback caclTips function
+bills.forEach((bill) => {
+    // calculate tips for each bills & store the values into a variable
+    const tips = calcTips(bill);
+    // push the tips into the tips array
+    tipsArr.push(tips);
+    // push the total into total array
+    totalArr.push(bill + tips);
+});
+// log the tips array
+console.log(tipsArr);
+
+// log the total array
+console.log(totalArr);
+
+// create a function to calculate the average of the array
+const calcAverage = function (arr) {
     let sum = 0;
-    // loop over the array
     for (let i = 0; i < arr.length; i++) {
-        // add the current value to the sum
         sum += arr[i];
     }
-    // calculate the average
-    const average = sum / arr.length;
-    // return the average
-    return average;
-}
+    return sum / arr.length;
+};
 
-//The calculator function
-function calculator(bills, tipsArr = [], totalsArr = []) {
-    //Calculate the tip and total for each bill
-    // and store the total into total array,
-    // and the tip into tip array.
-
-    if (bills >= 50 && bills <= 300) {
-        //tips will be
-        const tips = Math.round(bills * 0.15);
-        //store calculated tips into the tips array
-        tipsArr.push(tips);
-        //total payment would be
-        const total = bills + tips;
-        //store calculated total payment into the total array
-        totalsArr.push(total);
-        // Log the results to the console
-        console.log(
-            `
-            Bill is ${bills}, 
-            Your tip is ${tips},
-            your total payment is ${total}.
-            `
-        );
-        // Log the tips Array
-        console.log(tipsArr);
-        //Log the total array
-        console.log(totalsArr);
-        // return total;
-    } else {
-        //tips will be
-        const tips = Math.round(bills * 0.2);
-        //store calculated tips into the tips array
-        tipsArr.push(tips);
-        //total payment would be
-        const total = bills + tips;
-        //store calculated total payment into the total array
-        totalsArr.push(total);
-        console.log(
-            `
-            Bill is ${bills},
-            Your tip is ${tips},
-            your total payment is ${total}.
-            `
-        );
-        // Log the tips Array
-        console.log(tipsArr);
-
-        //Log the total array
-        console.log(totalsArr);
-        // return total;
-    }
-}
-// loop through each bill valueby using the forEach method
-// and calculate the total payment amount by calling the Calculator function
-// and calculate the tip amount for each bill value by calling the Calculator function
-bills.forEach((element) => {
-    calculator(element);
-});
-
-//calculate the average of the bills array
-const result = calcAverage(bills);
-console.log(result);
+// calculate the average of the bills arrays & Log the result
+const calcAvgBills = calcAverage(bills);
+console.log(calcAvgBills);
+// calculate the average of the totalArr arrays & Log the result
+const calcAvgTotal = calcAverage(totalArr);
+console.log(calcAvgTotal);
+// calculate the average of the tipsArr arrays & Log the result
+const calcAvgTips = calcAverage(tipsArr);
+console.log(calcAvgTips);
