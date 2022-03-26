@@ -456,19 +456,25 @@ for (let init = 1; init <= 10; init++) {
 for (let voting = 1; voting <= 50; voting++) {
     console.log(`Voter number ${voting} is currently voting`);
 }
+
 // ! LECTURE: Looping Arrays, Breaking and Continuing
 const arrayInit = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-for (let i = 0; 1 <= arrayInit.length; i++) {
-    console.log(arrayInit[i]);
-}
+arrayInit.forEach((element) => {
+    console.log(element);
+});
 
 const yearsOfTheAge = [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
 const birthYearInArray = [];
 
-for (let i = 0; i < yearsOfTheAge.length; i++) {
-    birthYearInArray.push(2022 - yearsOfTheAge[i]);
-}
-console.log(birthYearInArray);
+// for (let i = 0; i < yearsOfTheAge.length; i++) {
+//     birthYearInArray.push(2022 - yearsOfTheAge[i]);
+// }
+// console.log(birthYearInArray);
+
+yearsOfTheAge.forEach((element) => {
+    birthYearInArray.push(2022 - element);
+    console.log(`${element} years old is born at ${2022 - element}`);
+});
 
 // ? Assignment - LECTURE: Looping Arrays, Breaking and Continuing
 // 1. Let's bring back the 'populations' array from a previous assignment
@@ -484,6 +490,19 @@ console.log(birthYearInArray);
 //     return percentage;
 // }
 
+const PopulationInArray = [5300, 4900, 7000, 8000];
+const percentages2 = [];
+
+PopulationInArray.forEach((element) => {
+    percentages2.push(percentageOfWorld1(element));
+    console.log(
+        `
+        ${element} is ${percentageOfWorld1(element)}% of the world population
+        `
+    );
+    console.log(percentages2);
+});
+
 // ! LECTURE: Looping Backwards and Loops in Loops
 
 // ? Assignment - LECTURE: Looping Backwards and Loops in Loops
@@ -494,9 +513,29 @@ console.log(birthYearInArray);
 // arrays. Log a string like 'Neighbour: Canada' for each country
 // 3. You will need a loop inside a loop for this. This is actually a bit tricky, so don't
 // worry if it's too difficult for you! But you can still try to figure this out anyway
+const listOfNeighbours = [
+    ["Canada", "Mexico"],
+    ["Spain"],
+    ["Norway", "Sweden", "Russia"],
+];
+// for (let i = 0; i < listOfNeighbours.length; i++) {
+//     for (let j = 0; j < listOfNeighbours[i].length; j++) {
+//         console.log(listOfNeighbours[i][j]);
+//     }
+// }
+
+listOfNeighbours.forEach((element) => {
+    element.forEach((element2) => {
+        console.log(`Neighbour: ${element2}`);
+    });
+});
 
 // ! LECTURE: The while Loop
-
+let dice = Math.trunc(Math.random() * 6) + 1;
+while(dice != 6){
+    console.log(`dice is ${dice}`);
+    dice = Math.trunc(Math.random() * 6) + 1;
+}
 // ? Assignment - LECTURE: The while Loop
 // 1. Recreate the challenge from the lecture 'Looping Arrays, Breaking and Continuing',
 // but this time using a while loop (call the array 'percentages3')
