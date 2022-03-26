@@ -445,14 +445,22 @@ const myCountryV2 = {
 };
 
 // ! LECTURE: Iteration: The for Loop
-
+for (let init = 1; init <= 10; init++) {
+    console.log(`init value is now ${init}`);
+}
 // ? Assignment - LECTURE: Iteration: The for Loop
 // 1. There are elections in your country! In a small town, there are only 50 voters.
 // Use a for loop to simulate the 50 people voting, by logging a string like this to
 // the console (for numbers 1 to 50): 'Voter number 1 is currently voting'
 
+for (let voting = 1; voting <= 50; voting++) {
+    console.log(`Voter number ${voting} is currently voting`);
+}
 // ! LECTURE: Looping Arrays, Breaking and Continuing
-
+const arrayInit = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+for (let i = 0; 1 <= arrayInit.length; i++) {
+    console.log(arrayInit[i]);
+}
 // ? Assignment - LECTURE: Looping Arrays, Breaking and Continuing
 // 1. Let's bring back the 'populations' array from a previous assignment
 // 2. Use a for loop to compute an array called 'percentages2' containing the
@@ -462,6 +470,20 @@ const myCountryV2 = {
 // 'percentages' array that we created manually in the previous assignment,
 // and reflect on how much better this solution is
 
+// function percentageOfWorld1(population) {
+//     const percentage = (population / 7900) * 100;
+//     return percentage;
+// }
+
+const arrayPopulationExample = [5600, 7200, 8200, 9200];
+const percentages2 = [];
+for (let i = 0; 1 < arrayPopulationExample.length; i++) {
+    // const result = percentageOfWorld1([i]);
+    // percentages2.push(result);
+    console.log(i);
+}
+// console.log(result);
+// console.log(percentages2);
 // ! LECTURE: Looping Backwards and Loops in Loops
 
 // ? Assignment - LECTURE: Looping Backwards and Loops in Loops
