@@ -10,7 +10,6 @@
 
 // meesage show on the DOM
 const message = document.querySelector(".message");
-
 // The ? or the Number at the middle of the DOM
 const numberTag = document.querySelector(".number");
 
@@ -30,16 +29,6 @@ const highscoreDom = document.querySelector(".highscore");
 
 // Functions for compare the highest score and save it
 function HighestScore() {
-    // if (highscore < score) {
-    //     highscore = score;
-    //     highscoreDom.textContent = highscore;
-    // } else if (highscore > score) {
-    //     highscore = highscore;
-    //     highscoreDom.textContent = highscore;
-    // } else {
-    //     highscore = highscore;
-    //     highscoreDom.textContent = highscore;
-    // }
     highscore < score
         ? ((highscore = score), (highscoreDom.textContent = highscore))
         : ((highscore = highscore), (highscoreDom.textContent = highscore));
@@ -66,21 +55,6 @@ function main() {
         // check the highest score only when you win the game.
         HighestScore();
     } else if (guess !== randomNumber) {
-        // if (score > 1) {
-        //     // DOM text output by using the callback function msg()
-        //     msg(
-        //         // use the ternary operator to check the guessing number
-        //         guess > randomNumber
-        //             ? "😓 Your Guessing is too High"
-        //             : "😓 Your Guessing is too Low"
-        //     );
-        //     //calculate the score and output to the DOM
-        //     score--;
-        //     scoreDom.textContent = score;
-        // } else {
-        //     msg("😓 You Lose the game !");
-        //     scoreDom.textContent = 0;
-        // }
         score > 1
             ? (msg(
                   // use the ternary operator to check the guessing number
