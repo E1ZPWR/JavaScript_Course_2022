@@ -29,7 +29,7 @@ function main() {
     if (!guess) {
         msg("Please enter a number");
         // When Number is Correct
-    } else if (randomNumber === guess) {
+    } else if (guess === randomNumber) {
         // DOM text output
         msg("🧧 Correct Number");
         document.querySelector("body").style.backgroundColor = "green";
