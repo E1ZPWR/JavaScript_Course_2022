@@ -12,7 +12,6 @@
 const message = document.querySelector(".message");
 // The ? or the Number at the middle of the DOM
 const numberTag = document.querySelector(".number");
-
 // Button DOM element
 const checkBtn = document.querySelector(".check");
 const resetBtn = document.querySelector(".again");
@@ -39,32 +38,48 @@ function msg(msgText) {
     message.textContent = msgText;
 }
 
+// When the guess number is empty
+function empty() {
+    msg("Please enter a number");
+}
+
+// When the guess number is equal to the random number
+function equally() {
+    msg("🧧 Correct Number");
+    document.querySelector("body").style.backgroundColor = "green";
+    numberTag.textContent = randomNumber;
+    numberTag.style.width = "30rem";
+    // check the highest score only when you win the game.
+    HighestScore();
+}
+
+// When the Guess number is higher or lower(Not equal to) than the random number
+function notEqually() {
+    const guess = Number(document.querySelector(".guess").value);
+    score > 1
+        ? (msg(
+              // use the ternary operator to check the guessing number
+              guess > randomNumber
+                  ? "😓 Your Guessing is too High"
+                  : "😓 Your Guessing is too Low"
+          ),
+          score--,
+          (scoreDom.textContent = score))
+        : (msg("😓 You Lose the game !"), (scoreDom.textContent = 0));
+}
+
 // Function for the game logic
 function main() {
     const guess = Number(document.querySelector(".guess").value);
     // When there is no gueesing number
     if (!guess) {
-        msg("Please enter a number");
-        // When Number is Correct
-    } else if (guess === randomNumber) {
-        // DOM text output
-        msg("🧧 Correct Number");
-        document.querySelector("body").style.backgroundColor = "green";
-        numberTag.textContent = randomNumber;
-        numberTag.style.width = "30rem";
-        // check the highest score only when you win the game.
-        HighestScore();
+        empty();
+    }
+    // When Number is Correct
+    else if (guess === randomNumber) {
+        equally();
     } else if (guess !== randomNumber) {
-        score > 1
-            ? (msg(
-                  // use the ternary operator to check the guessing number
-                  guess > randomNumber
-                      ? "😓 Your Guessing is too High"
-                      : "😓 Your Guessing is too Low"
-              ),
-              score--,
-              (scoreDom.textContent = score))
-            : (msg("😓 You Lose the game !"), (scoreDom.textContent = 0));
+        notEqually();
     }
 }
 
