@@ -89,8 +89,6 @@ function Reset() {
     document.querySelector(".guess").value = "";
 }
 
-// EventListener
-// addEventListener is a method
-// addEventListener(Type of event, function)
+// EventListener , addEventListener(Type of event, function)
 checkBtn.addEventListener("click", main);
 resetBtn.addEventListener("click", Reset);
