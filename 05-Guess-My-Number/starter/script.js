@@ -71,13 +71,15 @@ function notEqually() {
 // Function for the game logic
 function main() {
     const guess = Number(document.querySelector(".guess").value);
-    // When there is no gueesing number
-    // the if-else condition will return boolean value
-    // the if statement will only run when the condition is true
-    // therefore in this case, if no guess number , then guess will be 0 , so the condition will be false
-    // so we should use ! to make the condition true
-    // the symble of ! in js means "not"
-    // therefore in this case, -> NOT false , -> true
+    /** 
+    When there is no gueesing number
+    the if-else condition will return boolean value
+    the if statement will only run when the condition is true
+    therefore in this case, if no guess number , then guess will be 0 , so the condition will be false
+    so we should use ! to make the condition true
+    the symble of ! in js means "not"
+    therefore in this case, -> NOT false , -> true
+    */
     if (!guess) {
         empty();
     }
