@@ -1,7 +1,12 @@
 "use strict";
+
+//=================================
 //score system manipulation rules
 // Too High -> -1
 // Too Low -> -1
+//=================================
+
+//======variable declaration======
 
 // meesage show on the DOM
 const message = document.querySelector(".message");
@@ -21,6 +26,29 @@ let score = 20;
 let highscore = 0;
 const scoreDom = document.querySelector(".score");
 const highscoreDom = document.querySelector(".highscore");
+//==============================
+
+// Functions for compare the highest score and save it
+function HighestScore() {
+    // if (highscore < score) {
+    //     highscore = score;
+    //     highscoreDom.textContent = highscore;
+    // } else if (highscore > score) {
+    //     highscore = highscore;
+    //     highscoreDom.textContent = highscore;
+    // } else {
+    //     highscore = highscore;
+    //     highscoreDom.textContent = highscore;
+    // }
+    highscore < score
+        ? ((highscore = score), (highscoreDom.textContent = highscore))
+        : ((highscore = highscore), (highscoreDom.textContent = highscore));
+}
+
+//Function foe display message
+function msg(msgText) {
+    message.textContent = msgText;
+}
 
 // Function for the game logic
 function main() {
@@ -55,28 +83,6 @@ function main() {
     }
 }
 
-// Functions for compare the highest score and save it
-function HighestScore() {
-    // if (highscore < score) {
-    //     highscore = score;
-    //     highscoreDom.textContent = highscore;
-    // } else if (highscore > score) {
-    //     highscore = highscore;
-    //     highscoreDom.textContent = highscore;
-    // } else {
-    //     highscore = highscore;
-    //     highscoreDom.textContent = highscore;
-    // }
-    highscore < score
-        ? ((highscore = score), (highscoreDom.textContent = highscore))
-        : ((highscore = highscore), (highscoreDom.textContent = highscore));
-}
-
-//Function foe display message
-function msg(msgText) {
-    message.textContent = msgText;
-}
-
 //Function for Reset
 function Reset() {
     randomNumber = Math.floor(Math.random() * 20) + 1;
@@ -89,6 +95,9 @@ function Reset() {
     document.querySelector(".guess").value = "";
 }
 
-// EventListener , addEventListener(Type of event, function)
+/**
+ * EventListener , addEventListener(Type of event, function)
+ * Type of event: click, mouseover, mouseout, keydown, keyup, keypress
+ */
 checkBtn.addEventListener("click", main);
 resetBtn.addEventListener("click", Reset);
