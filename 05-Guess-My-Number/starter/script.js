@@ -1,41 +1,80 @@
 "use strict";
+//score system manipulation rules
+// Too High -> -1
+// Too Low -> -1
 
-// get DOM elements
 const msg = document.querySelector(".message");
 
 const numberTag = document.querySelector(".number");
 
-const currentSocre = document.querySelector(".score");
-
+// Button DOM element
 const checkBtn = document.querySelector(".check");
+const resetBtn = document.querySelector(".again");
 
+// score system
+const highscore = document.querySelector(".highscore");
+
+// Create a random number for Secret Number
 let randomNumber = Math.floor(Math.random() * 20) + 1;
 
-// addEventListener
-// addEventListener is a method
-// addEventListener(Type of event, function)
-// click this button to check the value of input field
+const scoreDom = document.querySelector(".score");
+let score = 20;
 
 function main() {
-    // get input DOM from HTML
     const guess = Number(document.querySelector(".guess").value);
-    console.log(guess);
-    console.log(randomNumber);
-
+    // When there is no gueesing number
     if (!guess) {
         msg.textContent = "Please enter a number";
         msg.style.color = "red";
-        return;
+
+        // When Number is Correct
     } else if (randomNumber === guess) {
+        // DOM text output
         msg.textContent = "🧧 Correct Number";
-        msg.style.color = "green";
+        document.querySelector("body").style.backgroundColor = "green";
         numberTag.textContent = randomNumber;
-        numberTag.style.color = "green";
-        return;
+        numberTag.style.width = "30rem";
+        // When number is too high
+    } else if (guess > randomNumber) {
+        if (score > 1) {
+            // DOM text output
+            msg.textContent = "😓 Your Guessing is too High";
+            score--;
+            scoreDom.textContent = score;
+        } else {
+            msg.textContent = "😓 You Lose the game !";
+            scoreDom.textContent = 0;
+        }
+        // When number is too low
+    } else if (guess < randomNumber) {
+        if (score > 1) {
+            // DOM text output
+            msg.textContent = "😓 Your Guessing is too Low";
+            score--;
+            scoreDom.textContent = score;
+        } else {
+            msg.textContent = "😓 You Lose the game !";
+            scoreDom.textContent = 0;
+        }
     }
 }
-// when we get some thing from a user interface ,
-// the type of the value will be returned as string
-// but in this case,we need to compare the value with number generator
-// so we should covert the value type from input field to number (String to number)
+
+function Reset() {
+    randomNumber = Math.floor(Math.random() * 20) + 1;
+    score = 20;
+    scoreDom.textContent = score;
+    numberTag.style.width = "20rem";
+    msg.textContent = "Start guessing...";
+    document.querySelector("body").style.backgroundColor = "#222";
+    numberTag.textContent = "?";
+    document.querySelector(".guess").value = "";
+}
+// addEventListener
+// addEventListener is a method
+// addEventListener(Type of event, function)
+
+// click this button to check the value of input field
 checkBtn.addEventListener("click", main);
+
+// Click this button to reset the game
+resetBtn.addEventListener("click", Reset);
