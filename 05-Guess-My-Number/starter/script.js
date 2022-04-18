@@ -67,8 +67,9 @@ function main() {
         HighestScore();
     } else if (guess !== randomNumber) {
         if (score > 1) {
-            // DOM text output
+            // DOM text output by using the callback function msg()
             msg(
+                // use the ternary operator to check the guessing number
                 guess > randomNumber
                     ? "😓 Your Guessing is too High"
                     : "😓 Your Guessing is too Low"
