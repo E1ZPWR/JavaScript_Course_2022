@@ -66,21 +66,31 @@ function main() {
         // check the highest score only when you win the game.
         HighestScore();
     } else if (guess !== randomNumber) {
-        if (score > 1) {
-            // DOM text output by using the callback function msg()
-            msg(
-                // use the ternary operator to check the guessing number
-                guess > randomNumber
-                    ? "😓 Your Guessing is too High"
-                    : "😓 Your Guessing is too Low"
-            );
-            //calculate the score and output to the DOM
-            score--;
-            scoreDom.textContent = score;
-        } else {
-            msg("😓 You Lose the game !");
-            scoreDom.textContent = 0;
-        }
+        // if (score > 1) {
+        //     // DOM text output by using the callback function msg()
+        //     msg(
+        //         // use the ternary operator to check the guessing number
+        //         guess > randomNumber
+        //             ? "😓 Your Guessing is too High"
+        //             : "😓 Your Guessing is too Low"
+        //     );
+        //     //calculate the score and output to the DOM
+        //     score--;
+        //     scoreDom.textContent = score;
+        // } else {
+        //     msg("😓 You Lose the game !");
+        //     scoreDom.textContent = 0;
+        // }
+        score > 1
+            ? (msg(
+                  // use the ternary operator to check the guessing number
+                  guess > randomNumber
+                      ? "😓 Your Guessing is too High"
+                      : "😓 Your Guessing is too Low"
+              ),
+              score--,
+              (scoreDom.textContent = score))
+            : (msg("😓 You Lose the game !"), (scoreDom.textContent = 0));
     }
 }
 
