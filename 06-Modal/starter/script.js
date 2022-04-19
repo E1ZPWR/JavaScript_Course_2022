@@ -24,6 +24,13 @@ function btnHideAction() {
   overlay.classList.add('hidden');
 }
 
+// EventListener for Show and Hide modal
+btnsOpenModal.forEach(btn => {
+  btn.addEventListener('click', btnShowAction);
+});
+
+btnCloseModal.addEventListener('click', btnHideAction);
+
 // click on the overlay(blanck area) will also hide the modal
 overlay.addEventListener('click', btnHideAction);
 
@@ -39,10 +46,3 @@ document.addEventListener('keydown', e => {
     console.log(`${e.key} key is pressed`);
   }
 });
-
-// EventListener for Show and Hide modal
-btnsOpenModal.forEach(btn => {
-  btn.addEventListener('click', btnShowAction);
-});
-
-btnCloseModal.addEventListener('click', btnHideAction);
