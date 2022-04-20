@@ -26,9 +26,12 @@ let scores, currentScore, activePlayer, playing;
 
 // initial score function
 const init = () => {
+    // generate the a number between 0 and 1 to determine who start the game first
+    const startFirst = Math.floor(Math.random() * 2);
     scores = [0, 0];
     currentScore = 0;
     playing = true;
+    activePlayer = startFirst;
     score0El.textContent = 0;
     score1El.textContent = 0;
     current0El.textContent = 0;
@@ -36,9 +39,11 @@ const init = () => {
     diceEl.classList.add('hidden');
     player0El.classList.remove('player--winner');
     player1El.classList.remove('player--winner');
-    activePlayer = 0;
-    player0El.classList.add('player--active');
-    player1El.classList.remove('player--active');
+    activePlayer === 0
+        ? (player0El.classList.add('player--active'),
+          player1El.classList.remove('player--active'))
+        : (player1El.classList.add('player--active'),
+          player0El.classList.remove('player--active'));
 };
 init();
 
