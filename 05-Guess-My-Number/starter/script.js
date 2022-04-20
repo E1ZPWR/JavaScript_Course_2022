@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 //=================================
 //score system manipulation rules
@@ -9,28 +9,34 @@
 //======variable declaration======
 
 // meesage show on the DOM
-const message = document.querySelector(".message");
+const message =
+    document.querySelector('.message');
 // The ? or the Number at the middle of the DOM
-const numberTag = document.querySelector(".number");
+const numberTag =
+    document.querySelector('.number');
 // Button DOM element
-const checkBtn = document.querySelector(".check");
-const resetBtn = document.querySelector(".again");
+const checkBtn = document.querySelector('.check');
+const resetBtn = document.querySelector('.again');
 
 // Create a random number for Secret Number
-let randomNumber = Math.floor(Math.random() * 20) + 1;
+let randomNumber =
+    Math.floor(Math.random() * 20) + 1;
 
 //Score System value declaration
 let score = 20;
 let highscore = 0;
-const scoreDom = document.querySelector(".score");
-const highscoreDom = document.querySelector(".highscore");
+const scoreDom = document.querySelector('.score');
+const highscoreDom =
+    document.querySelector('.highscore');
 //==============================
 
 // Functions for compare the highest score and save it
 function HighestScore() {
     highscore < score
-        ? ((highscore = score), (highscoreDom.textContent = highscore))
-        : ((highscore = highscore), (highscoreDom.textContent = highscore));
+        ? ((highscore = score),
+          (highscoreDom.textContent = highscore))
+        : ((highscore = highscore),
+          (highscoreDom.textContent = highscore));
 }
 
 //Function foe display message
@@ -40,37 +46,44 @@ function msg(msgText) {
 
 // When the guess number is empty
 function empty() {
-    msg("Please enter a number");
+    msg('Please enter a number');
 }
 
 // When the guess number is equal to the random number
 function equally() {
-    msg("🧧 Correct Number");
-    document.querySelector("body").style.backgroundColor = "green";
+    msg('🧧 Correct Number');
+    document.querySelector(
+        'body'
+    ).style.backgroundColor = 'green';
     numberTag.textContent = randomNumber;
-    numberTag.style.width = "30rem";
+    numberTag.style.width = '30rem';
     // check the highest score only when you win the game.
     HighestScore();
 }
 
 // When the Guess number is higher or lower(Not equal to) than the random number
 function notEqually() {
-    const guess = Number(document.querySelector(".guess").value);
+    const guess = Number(
+        document.querySelector('.guess').value
+    );
     score > 1
         ? (msg(
               // use the ternary operator to check the guessing number
               guess > randomNumber
-                  ? "😓 Your Guessing is too High"
-                  : "😓 Your Guessing is too Low"
+                  ? '😓 Your Guessing is too High'
+                  : '😓 Your Guessing is too Low'
           ),
           score--,
           (scoreDom.textContent = score))
-        : (msg("😓 You Lose the game !"), (scoreDom.textContent = 0));
+        : (msg('😓 You Lose the game !'),
+          (scoreDom.textContent = 0));
 }
 
 // Function for the game logic
 function main() {
-    const guess = Number(document.querySelector(".guess").value);
+    const guess = Number(
+        document.querySelector('.guess').value
+    );
     /** 
     When there is no gueesing number
     the if-else condition will return boolean value
@@ -93,19 +106,22 @@ function main() {
 
 //Function for Reset
 function Reset() {
-    randomNumber = Math.floor(Math.random() * 20) + 1;
+    randomNumber =
+        Math.floor(Math.random() * 20) + 1;
     score = 20;
     scoreDom.textContent = score;
-    numberTag.style.width = "20rem";
-    msg("Start guessing...");
-    document.querySelector("body").style.backgroundColor = "#222";
-    numberTag.textContent = "?";
-    document.querySelector(".guess").value = "";
+    numberTag.style.width = '20rem';
+    msg('Start guessing...');
+    document.querySelector(
+        'body'
+    ).style.backgroundColor = '#222';
+    numberTag.textContent = '?';
+    document.querySelector('.guess').value = '';
 }
 
 /**
  * EventListener , addEventListener(Type of event, function)
  * Type of event: click, mouseover, mouseout, keydown, keyup, keypress
  */
-checkBtn.addEventListener("click", main);
-resetBtn.addEventListener("click", Reset);
+checkBtn.addEventListener('click', main);
+resetBtn.addEventListener('click', Reset);
