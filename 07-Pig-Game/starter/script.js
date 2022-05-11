@@ -41,15 +41,15 @@ const init = () => {
     player1El.classList.remove('player--winner');
     activePlayer === 0
         ? (player0El.classList.add('player--active'),
-          player1El.classList.remove('player--active'),
-          console.log(
-              `The Random Number is now ${activePlayer}, player 1 start first`
-          ))
+            player1El.classList.remove('player--active'),
+            console.log(
+                `The Random Number is now ${activePlayer}, player 1 start first`
+            ))
         : (player1El.classList.add('player--active'),
-          player0El.classList.remove('player--active'),
-          console.log(
-              `The Random Number is now ${activePlayer}, player 2 start first`
-          ));
+            player0El.classList.remove('player--active'),
+            console.log(
+                `The Random Number is now ${activePlayer}, player 2 start first`
+            ));
 };
 init();
 
