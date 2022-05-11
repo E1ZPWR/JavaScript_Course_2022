@@ -19,14 +19,14 @@ const btnRoll = document.querySelector('.btn--roll');
 const diceEl = document.querySelector('.dice');
 
 // activePlayer : to check which player is the player who currently playing
-// score : the socre holder for each player
+// score : the score holder for each player
 // currentScore : the current score of each player (after rolling the dice)
 // playing : the status of the player
 let scores, currentScore, activePlayer, playing;
 
 // initial score function
 const init = () => {
-    // generate the a number between 0 and 1 to determine who start the game first
+    // generate a number between 0 and 1 to determine who start the game first
     const startFirst = Math.floor(Math.random() * 2);
     scores = [0, 0];
     currentScore = 0;
@@ -41,9 +41,15 @@ const init = () => {
     player1El.classList.remove('player--winner');
     activePlayer === 0
         ? (player0El.classList.add('player--active'),
-          player1El.classList.remove('player--active'))
+          player1El.classList.remove('player--active'),
+          console.log(
+              `The Random Number is now ${activePlayer}, player 1 start first`
+          ))
         : (player1El.classList.add('player--active'),
-          player0El.classList.remove('player--active'));
+          player0El.classList.remove('player--active'),
+          console.log(
+              `The Random Number is now ${activePlayer}, player 2 start first`
+          ));
 };
 init();
 
@@ -51,7 +57,8 @@ init();
 const roll = () => {
     if (playing) {
         // 1. generate a random number between 1 to 6
-        const randomNumber = Math.floor(Math.random() * 6) + 1;
+        const randomNumber =
+            Math.floor(Math.random() * 6) + 1;
         // 2. display the dice
         diceEl.classList.remove('hidden');
         // 2.1 display the dice number via image
@@ -66,7 +73,7 @@ const roll = () => {
                 `#current--${activePlayer}`
             ).textContent = currentScore;
             //3.3 if random number is equal to 1
-            // swtich to another player
+            // switch to another player
         } else {
             nextplayer();
         }
@@ -76,8 +83,9 @@ const roll = () => {
 //switch player function
 const nextplayer = function () {
     currentScore = 0;
-    document.querySelector(`#current--${activePlayer}`).textContent =
-        currentScore;
+    document.querySelector(
+        `#current--${activePlayer}`
+    ).textContent = currentScore;
     // 4. switch to another player
     // 4.1  if the random number is equal to 1, switch player
     // #current--${activePlayer} -> #current--0 or -> #current--1
@@ -124,6 +132,7 @@ const hold = () => {
 };
 
 // Event Listeners
+
 btnNew.addEventListener('click', init);
 btnHold.addEventListener('click', hold);
 btnRoll.addEventListener('click', roll);
