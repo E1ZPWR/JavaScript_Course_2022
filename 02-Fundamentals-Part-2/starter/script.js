@@ -3,7 +3,7 @@
 // we use strict mode only for the specific functions or blocks of code that we want to be "secure"
 "use strict";
 let hasDriversLicense = false;
-// By default always use const unless you know this vasriable is gonna change.
+// By default always use const unless you know this variable is going to change.
 const passTest = true;
 if (passTest) {
     hasDriversLicense = true;
@@ -14,9 +14,9 @@ if (hasDriversLicense) {
 
 // ! LECTURE: Functions
 // What is it ? \
-// Function is a pice of code that can be execute again and again.
+// Function is a piece of code that can be executed again and again.
 
-//function declearation
+//function declaration
 function logger() {
     // function body
     console.log("This is a Logger");
@@ -26,21 +26,22 @@ function logger() {
 logger();
 
 // usally we write a function , we always pass data into a function, and additionally , the function will always return data back to us.
-// function functionName(Parameters){Functiuon Body}
-//Parameters are like avariable that are parcific to the function.
+// function functionName(Parameters){Function Body}
+//Parameters are like a variable that are pacific to the function.
 function fruit(apples, oranges) {
     console.log(apples, oranges);
     const juice = `Juice with ${apples} apples and ${oranges} oranges is ready`;
     return juice;
 }
+
 // calling / running / invoking the fruit() function
 // fruit(5, 10);
 // Where is the juice that just produced in the function ?
-// the juice was returned from this function
+// the juice was returned from this function,
 // so it means that the result of running this function here is the juice that we just returned.
-// once this function has been excuted,
+// once this function has been executed,
 // it means this code here is then replaced by the result of the function
-// and in this case that's gonna be the juice that we just returned.
+// and in this case that's going to be the juice that we just returned.
 // IMPORTANT: if we want to use that value that was returned from this function, we need to store it in a variable.
 // const variableName =  functionName(argument)
 const juiceService = fruit(5, 10);
@@ -79,12 +80,13 @@ The Result of Country Three is : ${describeCountryThree}
 function calculateAge1(birthYear) {
     return 2022 - birthYear;
 }
+
 const age1 = calculateAge1(1992);
 console.log(age1);
 
 //Function Expressions :
-// write a anonymous and store it in a variable.
-// const variablerName = function(parameters){functrion body}
+// write an anonymous and store it in a variable.
+// const variableName = function(parameters){function body}
 // Then this variable can be used anywhere in the code.
 // const variableName = function expressions
 const calculateAge2 = function (birthYear) {
@@ -109,6 +111,7 @@ function percentageOfWorld1(population) {
     const percentage = (population / 7900) * 100;
     return percentage;
 }
+
 // 3. Call 'percentageOfWorld1' for 3 populations of countries of your choice,
 // store the results into variables, and log them to the console
 const percentageOfWorldOne = percentageOfWorld1(1441);
@@ -132,10 +135,10 @@ console.log(
 );
 
 // ! LECTURE: Arrow Functions
-// const variableName = (parameters)=> retuend value
+// const variableName = (parameters)=> return value
 // when write arrow function we do not have to explicitly write 'return' keyword
 // it will return (after=>is returned value)implicitly.
-// const variableName = (parameters)=>{functiuon body}
+// const variableName = (parameters)=>{function body}
 // () and {} can be removed
 const calculateAge3 = (birthYear) => 2022 - birthYear;
 const age3 = calculateAge3(1992);
@@ -201,7 +204,7 @@ console.log(describePopulation("Singapore", 8782));
 // function FunctionName(parameters){function body}
 // 2. Function Expression
 //a function value stored in a variable
-//const varibaleName = function(parameters){function body}
+//const variableName = function(parameters){function body}
 // 3. Arrow Function
 // Grate for a quick one-line functions. Has no this keyword.
 //const variableName = (parameters)=>{function body}
@@ -307,8 +310,8 @@ console.log(neighbours);
 // 'neighbours' (an array like we used in previous assignments)
 
 // The following example is called object literals syntax
-// The diiferent of the objects and arrays are:
-// The order of objects properties does not matter at all when we want to recrive them,
+// The different of the objects and arrays are:
+// The order of objects properties does not matter at all when we want to receive them,
 // but the order of arrays does matter.
 // Use object for unstructured data and arrays for structured data
 const myCountry = {
@@ -325,7 +328,7 @@ console.log(`${countryOOP} is the country from countryOOP`);
 // Dot notation is a way to access the properties of an object.
 // Dot : We have to use the final property name
 // Bracket notation : We can put any expression inside the brackets,
-// we can compute it from some operations , b/c operations is an basiclly expression
+// we can compute it from some operations , b/c operations is a basic expression
 // Examples :
 const Jack = {
     firstName: "Jack",
@@ -348,7 +351,7 @@ console.log(Jack["last" + name]);
 const answers = prompt(`What do you want to know about Jack? 
 choose between firstname, lastname, age, jobtitle, joblevel`);
 // console.log(Jack.answers); => return undefined
-// undefined will happend when we tring to access a property on a object that does not exsit.
+//  This will happen when we try to access a property on an object that does not exsit.
 // Why? => In this case, the Object 'Jack' does not have a property answers, so it will return undefined.
 // but if we change to bracket notation, it will return the value of the property.
 // because inside bracket notation, we can put a compute value.
@@ -532,7 +535,7 @@ listOfNeighbours.forEach((element) => {
 
 // ! LECTURE: The while Loop
 let dice = Math.trunc(Math.random() * 6) + 1;
-while(dice != 6){
+while (dice != 6) {
     console.log(`dice is ${dice}`);
     dice = Math.trunc(Math.random() * 6) + 1;
 }
