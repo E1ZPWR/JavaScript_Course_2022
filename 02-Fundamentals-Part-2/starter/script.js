@@ -6,10 +6,10 @@ let hasDriversLicense = false;
 // By default always use const unless you know this variable is going to change.
 const passTest = true;
 if (passTest) {
-    hasDriversLicense = true;
+  hasDriversLicense = true;
 }
 if (hasDriversLicense) {
-    console.log(`I Can Drive`);
+  console.log(`I Can Drive`);
 }
 
 // ! LECTURE: Functions
@@ -18,8 +18,8 @@ if (hasDriversLicense) {
 
 //function declaration
 function logger() {
-    // function body
-    console.log("This is a Logger");
+  // function body
+  console.log("This is a Logger");
 }
 
 //calling / running / invoking
@@ -29,9 +29,9 @@ logger();
 // function functionName(Parameters){Function Body}
 //Parameters are like a variable that are pacific to the function.
 function fruit(apples, oranges) {
-    console.log(apples, oranges);
-    const juice = `Juice with ${apples} apples and ${oranges} oranges is ready`;
-    return juice;
+  console.log(apples, oranges);
+  const juice = `Juice with ${apples} apples and ${oranges} oranges is ready`;
+  return juice;
 }
 
 // calling / running / invoking the fruit() function
@@ -58,8 +58,8 @@ console.log(juiceService);
 // 2. Call this function 3 times, with input data for 3 different countries. Store the
 // returned values in 3 different variables, and log them to the console
 const describeCountry = (country, population, capitalCity) => {
-    const result = `${country} has ${population} million people and its capital city is ${capitalCity}`;
-    return result;
+  const result = `${country} has ${population} million people and its capital city is ${capitalCity}`;
+  return result;
 };
 
 const describeCountryOne = describeCountry("USA", "3.5 million", "Washington");
@@ -67,7 +67,7 @@ const describeCountryTwo = describeCountry("China", "1.4 billion", "Beijing");
 const describeCountryThree = describeCountry("Russia", "1.2 billion", "Moscow");
 
 console.log(
-    `
+  `
 The Result of Country One is : ${describeCountryOne}
 
 The Result of Country Two is : ${describeCountryTwo}
@@ -78,7 +78,7 @@ The Result of Country Three is : ${describeCountryThree}
 // ! LECTURE: Function Declarations vs. Expressions
 //Function Declarations :
 function calculateAge1(birthYear) {
-    return 2022 - birthYear;
+  return 2022 - birthYear;
 }
 
 const age1 = calculateAge1(1992);
@@ -90,7 +90,7 @@ console.log(age1);
 // Then this variable can be used anywhere in the code.
 // const variableName = function expressions
 const calculateAge2 = function (birthYear) {
-    return 2022 - birthYear;
+  return 2022 - birthYear;
 };
 const age2 = calculateAge2(1992);
 console.log(age2);
@@ -108,8 +108,8 @@ console.log(age2);
 // and then multiply by 100
 
 function percentageOfWorld1(population) {
-    const percentage = (population / 7900) * 100;
-    return percentage;
+  const percentage = (population / 7900) * 100;
+  return percentage;
 }
 
 // 3. Call 'percentageOfWorld1' for 3 populations of countries of your choice,
@@ -123,15 +123,15 @@ console.log(percentageOfWorldOne, percentageOfWorldTwo, percentageOfWorldThree);
 // 'percentageOfWorld2', and also call it with 3 country populations (can be
 // the same populations)
 const percentageOfWorld2 = function (population) {
-    return (population / 7900) * 100;
+  return (population / 7900) * 100;
 };
 const percentageOfWorldOneExpreesions = percentageOfWorld2(1441);
 const percentageOfWorldTwoExpreesions = percentageOfWorld2(8870);
 const percentageOfWorldThreeExpreesions = percentageOfWorld2(1559);
 console.log(
-    percentageOfWorldOneExpreesions,
-    percentageOfWorldTwoExpreesions,
-    percentageOfWorldThreeExpreesions
+  percentageOfWorldOneExpreesions,
+  percentageOfWorldTwoExpreesions,
+  percentageOfWorldThreeExpreesions
 );
 
 // ! LECTURE: Arrow Functions
@@ -145,17 +145,17 @@ const age3 = calculateAge3(1992);
 console.log(age3);
 
 const yearUntilRetirement = (birthYear, firstName) => {
-    const age = 2022 - birthYear;
-    const retirement = 65 - age;
-    return `${firstName} is gonna retirement after ${retirement} years`;
+  const age = 2022 - birthYear;
+  const retirement = 65 - age;
+  return `${firstName} is gonna retirement after ${retirement} years`;
 };
 console.log(yearUntilRetirement(1992, "Jcck Li"));
 // ? Assignment - LECTURE: Arrow Functions
 // 1. Recreate the last assignment, but this time create an arrow function called
 // 'percentageOfWorld3'
 const percentageOfWorld3 = (country, population) => {
-    const percentage = (population / 7900) * 100;
-    return `Country ${country} have population ${percentage}`;
+  const percentage = (population / 7900) * 100;
+  return `Country ${country} have population ${percentage}`;
 };
 // store the result of the function in a variable
 const percentageOfWorldOneArrow = percentageOfWorld3("Country A", 4444);
@@ -163,7 +163,7 @@ const percentageOfWorldTwoArrow = percentageOfWorld3("Country B", 5555);
 const percentageOfWorldThreeArrow = percentageOfWorld3("Country C", 6666);
 // console log the result
 console.log(
-    `
+  `
 ${percentageOfWorldOneArrow},
 ${percentageOfWorldTwoArrow},
 ${percentageOfWorldThreeArrow},
@@ -171,7 +171,7 @@ ${percentageOfWorldThreeArrow},
 );
 // Another way : do store the result of the function in a variable , directly call and log
 console.log(
-    `
+  `
 ${percentageOfWorld3("Country A", 4444)},
 ${percentageOfWorld3("Country B", 5555)},
 ${percentageOfWorld3("Country C", 6666)}.
@@ -190,8 +190,8 @@ ${percentageOfWorld3("Country C", 6666)}.
 // 'percentageOfWorld1' you created earlier
 // 3. Call 'describePopulation' with data for 3 countries of your choice
 const describePopulation = (country, population) => {
-    const countryOnePop = percentageOfWorld1(population);
-    return `${country} has ${population} million people, which is about ${countryOnePop} of the world.`;
+  const countryOnePop = percentageOfWorld1(population);
+  return `${country} has ${population} million people, which is about ${countryOnePop} of the world.`;
 };
 console.log(describePopulation("China", 1441));
 console.log(describePopulation("USA", 5555));
@@ -214,7 +214,7 @@ const variableArreay = [1, 2, 3, 4, 5];
 //array.length is used to get the number of the Elements
 // .length is called the property (talk later in Objects)
 console.log(
-    `
+  `
 The first element in this array is 
 ${variableArreay[0]}
 `
@@ -223,7 +223,7 @@ ${variableArreay[0]}
 //- 1 b/c .length is NOT zero-based, so we always need to minus 1
 // inside [] , is an expression. array.length[]
 console.log(
-    `
+  `
     The last element in this array is 
     ${variableArreay[variableArreay.length - 1]}
     `
@@ -248,7 +248,7 @@ console.log(arrayPopulations.length === 4);
 // console.log(percentages)
 
 const percentages = arrayPopulations.map((population) => {
-    return percentageOfWorld1(population);
+  return percentageOfWorld1(population);
 });
 console.log(percentages);
 // ! LECTURE: Basic Array Operations (Methods)
@@ -270,9 +270,9 @@ console.log(arrayOriginal);
 // indexOf Method : find the index of an element in the array (returns -1 if not found)
 // includes Method : check if an element exists in the array(returns true or false)
 if (arrayOriginal.includes(6)) {
-    console.log("Yes, this array has 6");
+  console.log("Yes, this array has 6");
 } else {
-    console.log(`No, This array  does not have 6`);
+  console.log(`No, This array  does not have 6`);
 }
 
 // ? Assignment - LECTURE: Basic Array Operations (Methods)
@@ -290,9 +290,9 @@ neighbours.pop();
 // 4. If the 'neighbours' array does not include the country ‘Germany’, log to the
 // console: 'Probably not a central European country :D'
 if (neighbours.includes("Germany")) {
-    console.log("Germany is a central European country");
+  console.log("Germany is a central European country");
 } else {
-    console.log("Germany is not a central European country");
+  console.log("Germany is not a central European country");
 }
 // 5. Change the name of one of your neighbouring countries. To do that,
 // find the index of the country in the 'neighbours' array,
@@ -315,12 +315,12 @@ console.log(neighbours);
 // but the order of arrays does matter.
 // Use object for unstructured data and arrays for structured data
 const myCountry = {
-    //key:"value"
-    country: "Singapore",
-    capital: "Singapore",
-    language: "English",
-    population: 8782,
-    neighbours: ["China", "USA", "Japan"],
+  //key:"value"
+  country: "Singapore",
+  capital: "Singapore",
+  language: "English",
+  population: 8782,
+  neighbours: ["China", "USA", "Japan"],
 };
 const countryOOP = myCountry.country;
 console.log(`${countryOOP} is the country from countryOOP`);
@@ -331,11 +331,11 @@ console.log(`${countryOOP} is the country from countryOOP`);
 // we can compute it from some operations , b/c operations is a basic expression
 // Examples :
 const Jack = {
-    firstName: "Jack",
-    lastName: "Li",
-    age: 30,
-    jobTitle: "Developer",
-    JobLevel: "Senior",
+  firstName: "Jack",
+  lastName: "Li",
+  age: 30,
+  jobTitle: "Developer",
+  JobLevel: "Senior",
 };
 //use Dot notation to access the property 'age'
 console.log(Jack.age);
@@ -360,7 +360,7 @@ choose between firstname, lastname, age, jobtitle, joblevel`);
 console.log(Jack[answers]);
 Jack.friends = ["John", "Jane", "Bob"];
 console.log(
-    `${Jack.firstName} ${Jack.lastName} has ${Jack.friends.length} friends and his best friends is ${Jack.friends[0]}`
+  `${Jack.firstName} ${Jack.lastName} has ${Jack.friends.length} friends and his best friends is ${Jack.friends[0]}`
 );
 // Re-cap:
 // When to use the dot notation:
@@ -385,30 +385,30 @@ console.log(stringFromOOP);
 // The keyword this refers to the object that is currently being used.
 
 const Peter = {
-    firstName: "Peter",
-    lastName: "Li",
-    birthYear: 1992,
-    jobTitle: "Developer",
-    JobLevel: "Senior",
-    hasDriversLicense: true,
+  firstName: "Peter",
+  lastName: "Li",
+  birthYear: 1992,
+  jobTitle: "Developer",
+  JobLevel: "Senior",
+  hasDriversLicense: true,
 
-    calAge: function () {
-        // Now, Think about if we need to calculate the age 5 time , and this means
-        // that we need to call calAge() funtion 5 time,
-        // What if we createa new value for this object ,
-        // so we can save the result from calAge() ftn.
-        // let us to this keyword to create a new value for this object
-        this.age = 2022 - this.birthYear;
-        return this.age;
-    },
+  calAge: function () {
+    // Now, Think about if we need to calculate the age 5 time , and this means
+    // that we need to call calAge() funtion 5 time,
+    // What if we createa new value for this object ,
+    // so we can save the result from calAge() ftn.
+    // let us to this keyword to create a new value for this object
+    this.age = 2022 - this.birthYear;
+    return this.age;
+  },
 
-    getSummary: function () {
-        return `
+  getSummary: function () {
+    return `
         ${this.firstName} ${this.lastName} is ${this.calAge()} years old 
         and he is a ${this.jobTitle}, 
         and he has ${this.hasDriversLicense ? "a" : "no"} Drivers License
         `;
-    },
+  },
 };
 // Object Peter is currently calling the calAge function/Method ,
 // So the keyword 'this' is referring to the object Peter.
@@ -427,29 +427,29 @@ console.log(result);
 // 'isIsland' will be true if there are no neighbouring countries, and false if
 // there are. Use the ternary operator to set the property.
 const myCountryV2 = {
-    //key:"value"
-    country: "Singapore",
-    capital: "Singapore",
-    language: "English",
-    population: 8782,
-    neighbours: ["China", "USA", "Japan"],
-    describe: function () {
-        return `${this.country} has ${this.population} million finnish-speaking people, 
+  //key:"value"
+  country: "Singapore",
+  capital: "Singapore",
+  language: "English",
+  population: 8782,
+  neighbours: ["China", "USA", "Japan"],
+  describe: function () {
+    return `${this.country} has ${this.population} million finnish-speaking people, 
         ${this.neighbours.length} neighbouring countries 
         and a capital called ${this.capital}.
         `;
-    },
-    checkIsland: function () {
-        this.isIsland =
-            this.neighbours.length === 0
-                ? true + `It is island`
-                : false + `It is not island`;
-    },
+  },
+  checkIsland: function () {
+    this.isIsland =
+      this.neighbours.length === 0
+        ? true + `It is island`
+        : false + `It is not island`;
+  },
 };
 
 // ! LECTURE: Iteration: The for Loop
 for (let init = 1; init <= 10; init++) {
-    console.log(`init value is now ${init}`);
+  console.log(`init value is now ${init}`);
 }
 // ? Assignment - LECTURE: Iteration: The for Loop
 // 1. There are elections in your country! In a small town, there are only 50 voters.
@@ -457,13 +457,13 @@ for (let init = 1; init <= 10; init++) {
 // the console (for numbers 1 to 50): 'Voter number 1 is currently voting'
 
 for (let voting = 1; voting <= 50; voting++) {
-    console.log(`Voter number ${voting} is currently voting`);
+  console.log(`Voter number ${voting} is currently voting`);
 }
 
 // ! LECTURE: Looping Arrays, Breaking and Continuing
 const arrayInit = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 arrayInit.forEach((element) => {
-    console.log(element);
+  console.log(element);
 });
 
 const yearsOfTheAge = [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
@@ -475,8 +475,8 @@ const birthYearInArray = [];
 // console.log(birthYearInArray);
 
 yearsOfTheAge.forEach((element) => {
-    birthYearInArray.push(2022 - element);
-    console.log(`${element} years old is born at ${2022 - element}`);
+  birthYearInArray.push(2022 - element);
+  console.log(`${element} years old is born at ${2022 - element}`);
 });
 
 // ? Assignment - LECTURE: Looping Arrays, Breaking and Continuing
@@ -497,13 +497,13 @@ const PopulationInArray = [5300, 4900, 7000, 8000];
 const percentages2 = [];
 
 PopulationInArray.forEach((element) => {
-    percentages2.push(percentageOfWorld1(element));
-    console.log(
-        `
+  percentages2.push(percentageOfWorld1(element));
+  console.log(
+    `
         ${element} is ${percentageOfWorld1(element)}% of the world population
         `
-    );
-    console.log(percentages2);
+  );
+  console.log(percentages2);
 });
 
 // ! LECTURE: Looping Backwards and Loops in Loops
@@ -517,9 +517,9 @@ PopulationInArray.forEach((element) => {
 // 3. You will need a loop inside a loop for this. This is actually a bit tricky, so don't
 // worry if it's too difficult for you! But you can still try to figure this out anyway
 const listOfNeighbours = [
-    ["Canada", "Mexico"],
-    ["Spain"],
-    ["Norway", "Sweden", "Russia"],
+  ["Canada", "Mexico"],
+  ["Spain"],
+  ["Norway", "Sweden", "Russia"],
 ];
 // for (let i = 0; i < listOfNeighbours.length; i++) {
 //     for (let j = 0; j < listOfNeighbours[i].length; j++) {
@@ -528,16 +528,16 @@ const listOfNeighbours = [
 // }
 
 listOfNeighbours.forEach((element) => {
-    element.forEach((element2) => {
-        console.log(`Neighbour: ${element2}`);
-    });
+  element.forEach((element2) => {
+    console.log(`Neighbour: ${element2}`);
+  });
 });
 
 // ! LECTURE: The while Loop
 let dice = Math.trunc(Math.random() * 6) + 1;
 while (dice != 6) {
-    console.log(`dice is ${dice}`);
-    dice = Math.trunc(Math.random() * 6) + 1;
+  console.log(`dice is ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
 }
 // ? Assignment - LECTURE: The while Loop
 // 1. Recreate the challenge from the lecture 'Looping Arrays, Breaking and Continuing',
