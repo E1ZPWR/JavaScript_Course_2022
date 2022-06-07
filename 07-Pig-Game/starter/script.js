@@ -98,7 +98,7 @@ const nextplayer = function () {
 const hold = () => {
   if (playing) {
     // add the current score to the total score
-    //init value : score = [0,0] -> array
+    //init value : score = [0,0]s -> array
     // scores[activePlayer] = scores[activePlayer] + currentScore;
     // score[1] = score[1] + currentScore
     // OR score[0] = score[0] + currentScore
