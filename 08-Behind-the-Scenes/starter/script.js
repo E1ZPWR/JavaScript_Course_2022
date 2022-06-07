@@ -60,72 +60,74 @@
  * By using an event loop takes long-running tasks , execute them in the background.
  * and puts them back in the main thread once they are finished.
  * */
+
 // ! The JavaScript Engine and Runtime
-/*
- [JS engine - call stack :]
- where our code are stored
- [JS engine - HEAP :]
- where our object are stored
- [Compilation VS Interpretation]
- Compilation: Entire code is converted int machine code at once,
- and written to a binary file that can be executed by a computer.
- Interpretation:
- Interpreter runs through the source code and executes it line by line.
-
- the modern JS use the combination of both.(JIT)
- Just-In-Time(JIT) compilation:
- Entire code is converted into machine code at once, then executed immediately.
-
- [JS Runtime]
- Without JS engine , there is no JS runtime, then there is no JS at all.
- - JS runtime in browser :
- JS runtime contains all the JS stuff we need.
- Js engine , Web API ,callback queue
- - Web API : Functionalities provided to the engine , accessible on window object.
- Web API includes DOM , the Timer, the Fetch API , etc.
- - callback queue : it is a data structure contains all the callback functions
- that are ready to be executed.
- for example : we attach event handler functions to DOM element lik e a button.
- and this event handle functions are also called callback functions.
- so as the event happens, e.g. a click , the callback function will be executed.
- After the event, the callback function will be put into the callback queue,
- then when the call stack is empty, the callback function is passed to the stack.
- and this happens by something called the event loop.
+/**
+ * [JS engine - call stack :]
+ * where our code are stored
+ * [JS engine - HEAP :]
+ * where our object are stored
+ * [Compilation VS Interpretation]
+ * Compilation: Entire code is converted int machine code at once,
+ * and written to a binary file that can be executed by a computer.
+ * Interpretation:
+ * Interpreter runs through the source code and executes it line by line.
+ *
+ * the modern JS use the combination of both.(JIT)
+ * Just-In-Time(JIT) compilation:
+ * Entire code is converted into machine code at once, then executed immediately.
+ *
+ * [JS Runtime]
+ * Without JS engine , there is no JS runtime, then there is no JS at all.
+ * - JS runtime in browser :
+ * JS runtime contains all the JS stuff we need.
+ * Js engine , Web API ,callback queue
+ * - Web API : Functionalities provided to the engine , accessible on window object.
+ * Web API includes DOM , the Timer, the Fetch API , etc.
+ * - callback queue : it is a data structure contains all the callback functions
+ * that are ready to be executed.
+ * for example : we attach event handler functions to DOM element lik e a button.
+ * and this event handle functions are also called callback functions.
+ * so as the event happens, e.g. a click , the callback function will be executed.
+ * After the event, the callback function will be put into the callback queue,
+ * then when the call stack is empty, the callback function is passed to the stack.
+ * and this happens by something called the event loop.
  */
+
 // ! Execution Contexts and The Call Stack
-/*
- [what is an Execution Context  and how it runs ?]
- Definition:
- - top-level code : is basically code that is not in the function.
- - Execution Context :
- 1 . environment in which a piece of JS is executed.
- Stores all the necessary information for some code to be executed.
- e.g : local variables or arguments passed into a function.
- 2.  Exactly ONE global Execution Context (EC):
- Default context, created for code that is not inside any function (top-level)
-
- What is inside execution context ?
- 1 . variable Environment :
- - let , const and var declarations
- - Functions
- - arguments object
- 2. Scope Chain :
- basically consists of references to variable that are located outside the current function.
- and to keep track of the Scope Chain, it is stored in each execution context.
- 3. 'this' keyword
-
- Notes: the arrow functions does not get their own argument keyword and no this keyword
- but can use the argument object and this keyword from their closest regular function parent.
-
- all above generated during 'creation phase' , right before execution.
-
- How Execution working ?
- 1. Let's say we just finished compilation and now move to the execution.
- 2. global execution context is created for the top-level code. so at the beginning,
- only the code is outside any functions will be executed. (Functions should only be executed when they are called)
- 3. Execution of top-level code(inside global EC)
- 4. Execution of functions and waiting for callbacks
- - One execution context per function : For each function call , a new execution context is created.
+/**
+ * [what is an Execution Context  and how it runs ?]
+ * Definition:
+ * - top-level code : is basically code that is not in the function.
+ * - Execution Context :
+ * 1 . environment in which a piece of JS is executed.
+ * Stores all the necessary information for some code to be executed.
+ * e.g : local variables or arguments passed into a function.
+ * 2.  Exactly ONE global Execution Context (EC):
+ * Default context, created for code that is not inside any function (top-level)
+ *
+ * What is inside execution context ?
+ * 1 . variable Environment :
+ * - let , const and var declarations
+ * - Functions
+ * - arguments object
+ * 2. Scope Chain :
+ * basically consists of references to variable that are located outside the current function.
+ * and to keep track of the Scope Chain, it is stored in each execution context.
+ * 3. 'this' keyword
+ *
+ * Notes: the arrow functions does not get their own argument keyword and no this keyword
+ * but can use the argument object and this keyword from their closest regular function parent.
+ *
+ * all above generated during 'creation phase' , right before execution.
+ *
+ * How Execution working ?
+ * 1. Let's say we just finished compilation and now move to the execution.
+ * 2. global execution context is created for the top-level code. so at the beginning,
+ * only the code is outside any functions will be executed. (Functions should only be executed when they are called)
+ * 3. Execution of top-level code(inside global EC)
+ * 4. Execution of functions and waiting for callbacks
+ * - One execution context per function : For each function call , a new execution context is created.
  */
 
 // ! Scope and The Scope Chain
