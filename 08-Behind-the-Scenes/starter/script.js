@@ -161,6 +161,14 @@
  */
 /**
  * The Scope Chain
+ * The Scope chain is a one-way street : a scope will never ever have access
+ * to the variable of an inner scope
+ *
+ * The Scope Chain in a certain scope is equal to adding together all the variable
+ * environments of the all parent scopes
+ *
+ * The Scope chain has nothing to do with the order in which functions were called.
+ * It does not affect the scope chain at all.
  */
 
 //Global Scope
@@ -206,30 +214,27 @@ function first() {
 
 first();
 
-/*
- *[Scope Chain VS Call Stack]
+/**
+ * [Scope Chain VS Call Stack]
+ * const a = 'Jonas';
+ *  third();
  *
+ *  function third() {
+ *  const b = 'Hello';
+ *  fourth();
  *
+ *  function fourth() {
+ *  const c = 'Hi';
+ *  five();
+ *  }
+ *  }
+ *
+ *  function five() {
+ *  const d = 'Hey';
+ *  console.log(d + c + b + a);
+ *  // Reference Error
+ *  }
  */
-const a = 'Jonas';
-third();
-
-function third() {
-  const b = 'Hello';
-  fourth();
-
-  function fourth() {
-    const c = 'Hi';
-    five();
-  }
-}
-
-function five() {
-  const d = 'Hey';
-  console.log(d + c + b + a);
-  // Reference Error
-}
-
 // ! Scoping in Practice
 
 // ! Variable Environment: Hoisting and The TDZ
