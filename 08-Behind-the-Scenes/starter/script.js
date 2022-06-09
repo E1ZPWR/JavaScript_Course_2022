@@ -235,6 +235,7 @@ first();
  *  // Reference Error
  *  }
  */
+
 // ! Scoping in Practice
 
 // ! Variable Environment: Hoisting and The TDZ
