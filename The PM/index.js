@@ -1,17 +1,22 @@
 // link btn
-const kdo = document.querySelector('#kdo');
-const pdo = document.querySelector('#pdo');
+const showLink = document.querySelector("#showLink");
+const hideLink = document.querySelector("#hideLink");
+
 // div paragraph
-const kdiv = document.querySelector('#kdiv');
-const pdiv = document.querySelector('#pdiv');
+const long = document.querySelector("#long");
 
-function showk() {
-    kdiv.style.display = 'block';
+//function to show content
+function show() {
+  long.style.display = "block";
+  showLink.textContent = "Read More";
 }
 
-function showp() {
-    pdiv.style.display = 'block';
+//function to hide content
+function hide() {
+  long.style.display = "none";
+  hideLink.textContent = "Read Less";
 }
 
-kdo.addEventListener('click', showk);
-pdo.addEventListener('click', showp);
+// Event listener
+showLink.addEventListener("click", show);
+hideLink.addEventListener("click", hide);
