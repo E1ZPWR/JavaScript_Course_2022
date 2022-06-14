@@ -281,9 +281,8 @@ first();
  * Makes it easier to avoid and catch error: accessing variables before declaration
  * is bad practice and should be avoided.
  * Make const variables actually work.
- * 
-
  */
+
 // ! Hoisting and TDZ in Practice
 
 // ! This Keyword
