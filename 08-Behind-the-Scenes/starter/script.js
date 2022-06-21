@@ -300,13 +300,31 @@ first();
  *
  * Simple function call -> this = undefined (In strict mode) , Otherwise = windows
  *
- * Arrow function -> this = <this of surrounding function(parent function)(lexical this)>
+ * Arrow function -> this = <this of surrounding function(parent function/scope)(lexical this)>
  *
  * Event Listener -> this = <DOM element that the handler is attached to>
  *
  * this does NOT point to the function itself, and also NOT its variable environment.
  */
 // ! This Keyword in Practice
+// windows scope
+console.log(this);
+
+// normal function
+function calcAge(birthYear) {
+  const age = 2022 - birthYear;
+  console.log(`Normal Function : ${age}`);
+  console.log('this keyword in normal function is ' + this);
+}
+
+// arrow function
+const calcAgeArrow = birthYear => {
+  const age = 2022 - birthYear;
+  console.log(`Arrow Function : ${age}`);
+  console.log('this keyword in arrow function is ' + this);
+};
+calcAge(1992);
+calcAgeArrow(1992);
 
 // ! Regular Functions vs. Arrow Functions
 
