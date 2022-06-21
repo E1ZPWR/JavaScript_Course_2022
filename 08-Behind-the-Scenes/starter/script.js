@@ -176,40 +176,40 @@ const myName = 'Jack';
 
 // first() scope
 function first() {
-  const age = 30;
-  if (age >= 30) {
-    // block scope
-    const decade = 3;
-    //function scope(first() scope) , because block scope NOT applied to var.
-    var millenial = true;
-  }
+    const age = 30;
+    if ( age >= 30 ) {
+        // block scope
+        const decade = 3;
+        //function scope(first() scope) , because block scope NOT applied to var.
+        var millenial = true;
+    }
 
-  //second () scope
-  function second() {
-    // function scope
-    const job = 'student';
-    /**
-     * need myName and age variable in order to clg
-     * scope has access to variable from all outer scope ,
-     * so from all its parent scopes
-     * In this case, the second scope can access the age variable from the scope
-     * of the first function(first() scope).
-     * Therefore , the first function can access to global scope myName.
-     * so the second() scope also has the access to the myName global scope,
-     * because the second scope has the access to the first scope.
-     * All of these rules also applied to the function argument.
-     * All above explained hoe the scope chain works.
-     * [Scope look up in Scope Chain :]
-     * If one scope needs to use a certain variables, but cannot find it in the
-     * current scope, it will look up in the scope chain and see if it can find
-     * a variable in one of the parent scope.
-     * if it can , it will then use that variable.
-     * if it cannot, then there will be an error.
-     */
-    console.log(`${myName} is a ${age} years old ${job}`);
-  }
+    //second () scope
+    function second() {
+        // function scope
+        const job = 'student';
+        /**
+         * need myName and age variable in order to clg
+         * scope has access to variable from all outer scope ,
+         * so from all its parent scopes
+         * In this case, the second scope can access the age variable from the scope
+         * of the first function(first() scope).
+         * Therefore , the first function can access to global scope myName.
+         * so the second() scope also has the access to the myName global scope,
+         * because the second scope has the access to the first scope.
+         * All of these rules also applied to the function argument.
+         * All above explained hoe the scope chain works.
+         * [Scope look up in Scope Chain :]
+         * If one scope needs to use a certain variables, but cannot find it in the
+         * current scope, it will look up in the scope chain and see if it can find
+         * a variable in one of the parent scope.
+         * if it can , it will then use that variable.
+         * if it cannot, then there will be an error.
+         */
+        console.log(`${ myName } is a ${ age } years old ${ job }`);
+    }
 
-  second();
+    second();
 }
 
 first();
@@ -311,17 +311,17 @@ first();
 console.log(this);
 
 // normal function
-function calcAge(birthYear) {
-  const age = 2022 - birthYear;
-  console.log(`Normal Function : ${age}`);
-  console.log('this keyword in normal function is ' + this);
+function calcAge( birthYear ) {
+    const age = 2022 - birthYear;
+    console.log(`Normal Function : ${ age }`);
+    console.log('this keyword in normal function is ' + this);
 }
 
 // arrow function
 const calcAgeArrow = birthYear => {
-  const age = 2022 - birthYear;
-  console.log(`Arrow Function : ${age}`);
-  console.log('this keyword in arrow function is ' + this);
+    const age = 2022 - birthYear;
+    console.log(`Arrow Function : ${ age }`);
+    console.log('this keyword in arrow function is ' + this);
 };
 calcAge(1992);
 calcAgeArrow(1992);
