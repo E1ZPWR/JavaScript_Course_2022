@@ -286,7 +286,26 @@ first();
 // ! Hoisting and TDZ in Practice
 
 // ! This Keyword
-
+/**
+ * this keyword/variable:
+ * Special variable that is created for every excution content(every function)
+ * Takes the value of (point to) the 'owner' of the function in which the this keyword
+ * is used.
+ *
+ * this is NOT static. it depends on how the function is called , and its value is
+ * only assigned when the function is actually used.
+ *
+ * ways of this keyword is called:
+ * Method (function inside Object) -> this = <Object that is calling the method>
+ *
+ * Simple function call -> this = undefined (In strict mode) , Otherwise = windows
+ *
+ * Arrow function -> this = <this of surrounding function(parent function)(lexical this)>
+ *
+ * Event Listener -> this = <DOM element that the handler is attached to>
+ *
+ * this does NOT point to the function itself, and also NOT its variable environment.
+ */
 // ! This Keyword in Practice
 
 // ! Regular Functions vs. Arrow Functions
