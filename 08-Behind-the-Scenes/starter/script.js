@@ -177,7 +177,7 @@ const myName = 'Jack';
 // first() scope
 function first() {
     const age = 30;
-    if ( age >= 30 ) {
+    if (age >= 30) {
         // block scope
         const decade = 3;
         //function scope(first() scope) , because block scope NOT applied to var.
@@ -206,7 +206,7 @@ function first() {
          * if it can , it will then use that variable.
          * if it cannot, then there will be an error.
          */
-        console.log(`${ myName } is a ${ age } years old ${ job }`);
+        console.log(`${myName} is a ${age} years old ${job}`);
     }
 
     second();
@@ -311,16 +311,16 @@ first();
 console.log(this);
 
 // normal function
-function calcAge( birthYear ) {
+function calcAge(birthYear) {
     const age = 2022 - birthYear;
-    console.log(`Normal Function : ${ age }`);
+    console.log(`Normal Function : ${age}`);
     console.log('this keyword in normal function is ' + this);
 }
 
 // arrow function
-const calcAgeArrow = birthYear => {
+const calcAgeArrow = (birthYear) => {
     const age = 2022 - birthYear;
-    console.log(`Arrow Function : ${ age }`);
+    console.log(`Arrow Function : ${age}`);
     console.log('this keyword in arrow function is ' + this);
 };
 calcAge(1992);
