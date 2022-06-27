@@ -252,7 +252,7 @@ first();
  * Hoisted? Yes
  * Initial value? actual function
  * Scope? Block
-
+ 
  * [var variables]
  * Hoisted? Yes
  * Initial value? undefined
@@ -327,7 +327,52 @@ calcAge(1992);
 calcAgeArrow(1992);
 
 // ! Regular Functions vs. Arrow Functions
+const Daniel = {
+    name: 'Daniel',
+    age: 20,
+    job: 'student',
+    presentation: function () {
+        console.log(`My name is ${this.name} and I am ${this.age} years old.`);
+        /*
+         * this.age is undefined
+         * because this keyword inside a function is undefined
+         */
+        // const isMillenial = function () {
+        //     console.log(this);
+        //     console.log(this.age >= 21 && this.age <= 30);
+        // };
+        /*
+         * Solution 1 :
+         * create a new variable outside inner function
+         * and assign it to this keyword
+         * then use that variable inside inner function
+         * this keyword inside inner function will point to the outer function
+         * because the scope chain will do a lookup f the variable is not exist
+         * inside current function scope.
+         * Solution 2 :
+         * use Arrow Function
+         * because arrow function has lexical this , it will use this keyword
+         * from it parents scope.
+         */
+        const self = this;
+        const isMillenial = function () {
+            console.log(self);
+            console.log(self.age >= 21 && self.age <= 30);
+        };
+        isMillenial();
 
+        const isMillenialArrow = () => {
+            console.log(this);
+            console.log(this.age >= 21 && this.age <= 30);
+        };
+        isMillenialArrow();
+    },
+    presentationArrow: () => {
+        console.log(`My name is ${this.name} and I am ${this.age} years old.`);
+    }
+};
+Daniel.presentation();
+Daniel.presentationArrow();
 // ! Primitives vs. Objects (Primitive vs. Reference Types)
 
 // ! Primitives vs. Objects in Practice
