@@ -288,8 +288,8 @@ first();
 // ! This Keyword
 /**
  * this keyword/variable:
- * Special variable that is created for every excution content(every function)
- * Takes the value of (point to) the 'owner' of the function in which the this keyword
+ * Special variable that is created for every execution content(every function)
+ * Takes the value of (point to) the 'owner' of the function in which this keyword
  * is used.
  *
  * this is NOT static. it depends on how the function is called , and its value is
@@ -318,7 +318,7 @@ function calcAge(birthYear) {
 }
 
 // arrow function
-const calcAgeArrow = birthYear => {
+const calcAgeArrow = (birthYear) => {
     const age = 2022 - birthYear;
     console.log(`Arrow Function : ${age}`);
     console.log('this keyword in arrow function is ' + this);
