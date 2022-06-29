@@ -374,5 +374,12 @@ const Daniel = {
 Daniel.presentation();
 Daniel.presentationArrow();
 // ! Primitives vs. Objects (Primitive vs. Reference Types)
-
+/*
+ * Primitive :
+ * Number, String, Boolean, undefined, null, Symbol,bigint
+ *
+ * Reference :
+ * Object, Array, Function, Date, RegExp, Error, Map, Set, WeakMap, WeakSet
+ *
+ */
 // ! Primitives vs. Objects in Practice
