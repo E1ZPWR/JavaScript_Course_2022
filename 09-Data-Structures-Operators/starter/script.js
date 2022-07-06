@@ -13,6 +13,18 @@ const restaurant = {
     mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
     openingHours: {
+        mon: {
+            open: 10,
+            close: 22
+        },
+        tue: {
+            open: 10,
+            close: 22
+        },
+        wed: {
+            open: 10,
+            close: 22
+        },
         thu: {
             open: 12,
             close: 22
@@ -22,6 +34,10 @@ const restaurant = {
             close: 23
         },
         sat: {
+            open: 0, // Open 24 hours
+            close: 24
+        },
+        sun: {
             open: 0, // Open 24 hours
             close: 24
         }
