@@ -11,25 +11,89 @@ const restaurant = {
     categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
     starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
     mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-    // 解构赋值
+
+    openingHours: {
+        thu: {
+            open: 12,
+            close: 22
+        },
+        fri: {
+            open: 11,
+            close: 23
+        },
+        sat: {
+            open: 0, // Open 24 hours
+            close: 24
+        }
+    },
+    // ! LECTURE: Destructuring Arrays 解构数组赋值
     order: function destructuring(entryDish, mainDish) {
         return [this.starterMenu[entryDish], this.mainMenu[mainDish]];
+    },
+
+    // ! LECTURE: Destructuring Objects 解构对象赋值
+    orderDelivery: function ({
+        DeliveryTime = '22:00',
+        DeliveryAddress = '197 Gray Ave, Brooklyn, NY 11201',
+        OrderedEntryDish = 1,
+        OrderedMainDish = 0,
+        CustomerName = 'Jack'
+    }) {
+        console.log(`
+        restaurantName : ${this.name}
+        Ordered for ${CustomerName}
+        Delivery time: ${DeliveryTime}
+        Delivery Address: ${DeliveryAddress}
+        Ordered entry dish: ${this.starterMenu[OrderedEntryDish]}
+        Ordered main dish: ${this.mainMenu[OrderedMainDish]}`);
     }
-    // openingHours: {
-    //     thu: {
-    //         open: 12,
-    //         close: 22
-    //     },
-    //     fri: {
-    //         open: 11,
-    //         close: 23
-    //     },
-    //     sat: {
-    //         open: 0, // Open 24 hours
-    //         close: 24
-    //     }
-    // }
 };
-//解构操作
+//解构数组操作
 const [starter, main] = restaurant.order(2, 0);
 console.log(starter, main);
+//解构对象操作
+restaurant.orderDelivery({
+    CustomerName: 'Daniel',
+    OrderedEntryDish: 2,
+    OrderedMainDish: 2,
+    DeliveryTime: '12:00',
+    DeliveryAddress: '197 Grange Rd Glen Huntly 3163'
+});
+
+// 解构对象赋值知识点
+// const { name, location, categories, openingHours } = restaurant;
+// console.log(name, location, categories, openingHours);
+
+const {
+    name: restaurantName,
+    location: restaurantLocation,
+    categories: restaurantCategories,
+    openingHours: restaurantOpeningHours
+} = restaurant;
+console.log(restaurantName, restaurantLocation, restaurantCategories, restaurantOpeningHours);
+
+//Set a Default value when destructuring
+const {
+    menu: restaurantMenu = 'No menu available',
+    starterMenu: starters = 'No menu available',
+    mainMenu: mainDish = 'No menu available'
+} = restaurant;
+console.log(restaurantMenu, starters, mainDish);
+
+//nested objects
+const {
+    fri: { open: restaurantOpen, close: restaurantClose }
+} = restaurant.openingHours;
+console.log(` THe restaurant opening hours at Friday is ${restaurantOpen}AM -  ${restaurantClose}PM`);
+
+//mutating the variables when destructing the object
+let a = 111;
+let b = 222;
+const obj = {
+    a: 23,
+    b: 24,
+    c: 25
+};
+//change a and b values
+({ a, b } = obj);
+console.log(a, b);
