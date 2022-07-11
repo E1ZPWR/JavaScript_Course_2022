@@ -73,6 +73,9 @@ const restaurant = {
         End of the Order List
         =====================================
             `);
+    },
+    orderPromptSystem: function (ingredient1, ingredient2, ingredient3) {
+        console.log(`Here is your pasta with ingredient: ${ingredient1}, ${ingredient2}, ${ingredient3}`);
     }
 };
 //解构数组操作
@@ -124,3 +127,51 @@ const obj = {
 //change a and b values
 ({ a, b } = obj);
 console.log(a, b);
+
+// ! LECTURE: Spread Operator 展开运算符
+/*
+ * spread operator for arrays
+ */
+
+const allMenu = [...restaurant.starterMenu, ...restaurant.mainMenu, ...restaurant.dessertsMenu];
+console.log(allMenu);
+
+// Iterables : array , strings,maps,sets,Not objects
+const Jack = 'Jack';
+const letters = [...Jack, '', "'s"];
+console.log(letters);
+
+const ingredients = [
+    // prompt('Enter your first ingredient'),
+    // prompt('Enter your second ingredient'),
+    // prompt('Enter your third ingredient')
+];
+restaurant.orderPromptSystem(...ingredients);
+
+/*
+ * spread operator for objects
+ */
+
+/**
+ * create a new objects with additional properties then merge them with the old object
+ * check the difference between the old objects and the new objects
+ */
+const newRestaurant = {
+    foundedIn: 1998,
+    founder: 'John Doe',
+    ...restaurant
+};
+console.log(`New Restaurant `);
+console.log(newRestaurant);
+
+/*
+ * create a new object and copy the properties from the old object
+ * then reassign the properties of the new object
+ * check the difference between the old objects and the new objects
+ * shallow copy
+ */
+
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'A New Name of the Restaurant';
+console.log(restaurantCopy.name);
+console.log(restaurant.name);
