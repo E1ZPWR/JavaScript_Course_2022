@@ -17,37 +17,37 @@ const restaurant = {
     },
     openingHours: {
         monday: {
-            open: 10,
-            close: 22
+            openTime: 10,
+            closeTime: 22
         },
         tuesday: {
-            open: 10,
-            close: 22
+            openTime: 10,
+            closeTime: 22
         },
         wednesday: {
-            open: 10,
-            close: 22
+            openTime: 10,
+            closeTime: 22
         },
         thursday: {
-            open: 12,
-            close: 22
+            openTime: 12,
+            closeTime: 22
         },
         friday: {
-            open: 11,
-            close: 23
+            openTime: 11,
+            closeTime: 23
         },
         saturday: {
-            open: 0, // Open 24 hours
-            close: 24
+            openTime: 0, // Open 24 hours
+            closeTime: 24
         },
         sunday: {
-            open: 0, // Open 24 hours
-            close: 24
+            openTime: 0, // Open 24 hours
+            closeTime: 24
         }
     },
 
     OpenTime: function (day) {
-        return `Open Time for ${day}: ${this.openingHours[day].open} - ${this.openingHours[day].close}`;
+        return `Open Time for ${day}: ${this.openingHours[day].openTime} - ${this.openingHours[day].closeTime}`;
     }
 };
 const [open, close] = restaurant.OpenTime('sunday').split(' - ');
