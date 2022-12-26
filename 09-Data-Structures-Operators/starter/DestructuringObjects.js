@@ -5,7 +5,16 @@ const restaurant = {
     starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
     mainMenu: ['Pizza', 'Pasta', 'Risotto'],
     dessertsMenu: ['Cannoli', 'Tiramisu', 'Torta'],
-
+    services: {
+        delivery: true,
+        surcharge: 0.2,
+        dayTimeCost: 5,
+        dayTimeStart: 7,
+        dayTimeEnd: 18,
+        nightTimeCost: 10,
+        nightTimeStart: 18,
+        nightTimeEnd: 24
+    },
     openingHours: {
         monday: {
             open: 10,
